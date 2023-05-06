@@ -1,0 +1,27 @@
+.idea
+
+# ignorar arquivos e pastas específicas
+node_modules/
+venv/
+*.pyc
+__pycache__/
+
+# ignorar arquivos gerados
+*.log
+*.zip
+*.gz
+
+# ignorar arquivos de configuração
+.env
+config.ini
+
+# ignorar arquivos de compilação
+*.o
+*.a
+*.exe
+*.dll
+
+# ignorar arquivos de dependência
+pip.lock
+package-lock.json
+yarn.lock
