@@ -1,3 +1,5 @@
+import uuid
+
 import boto3
 from botocore.exceptions import ClientError
 
@@ -11,10 +13,13 @@ class DynamoMock:
     def find(self):
         return self.table.scan()['Items']
 
+    def find_count(self):
+        return self.table.scan()['Count']
+
     def find_by_id(self, _id):
         return self.table.get_item(Key={
-            id: _id,
-        })['Items']
+            'id': _id,
+        })['Item']
 
     def save(self, data):
         try:
@@ -35,7 +40,7 @@ class DynamoMock:
             AttributeDefinitions=[
                 {
                     'AttributeName': 'id',
-                    'AttributeType': 'N'
+                    'AttributeType': 'S'
                 },
             ],
             ProvisionedThroughput={
