@@ -8,6 +8,7 @@ moto = "*"
 boto3 = "*"
 pytest = "*"
 botocore = "*"
+dependency-injector = "*"
 
 [dev-packages]
 
